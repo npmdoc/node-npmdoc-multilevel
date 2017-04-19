@@ -1,0 +1,1182 @@
+<html><head></head><body><div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a href="https://github.com/juliangruber/multilevel#readme">multilevel (v7.3.0)</a>
+</h1>
+<h4>Expose a leveldb over the network.</h4>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.multilevel">module multilevel</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.multilevel.client">
+            function <span class="apidocSignatureSpan">multilevel.</span>client
+            <span class="apidocSignatureSpan">(m)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.multilevel.server">
+            function <span class="apidocSignatureSpan">multilevel.</span>server
+            <span class="apidocSignatureSpan">(db, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.multilevel.writeManifest">
+            function <span class="apidocSignatureSpan">multilevel.</span>writeManifest
+            <span class="apidocSignatureSpan">(db, path)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">multilevel.</span>client.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">multilevel.</span>msgpack</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.multilevel.client">module multilevel.client</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.multilevel.client.client">
+            function <span class="apidocSignatureSpan">multilevel.</span>client
+            <span class="apidocSignatureSpan">(m)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.multilevel.client.super_">
+            function <span class="apidocSignatureSpan">multilevel.client.</span>super_
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.multilevel.client.prototype">module multilevel.client.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.multilevel.client.prototype._asyncSync">
+            function <span class="apidocSignatureSpan">multilevel.client.prototype.</span>_asyncSync
+            <span class="apidocSignatureSpan">(db, k, name)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.multilevel.client.prototype._buildAll">
+            function <span class="apidocSignatureSpan">multilevel.client.prototype.</span>_buildAll
+            <span class="apidocSignatureSpan">(_db, db, path, parent)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.multilevel.client.prototype._queue">
+            function <span class="apidocSignatureSpan">multilevel.client.prototype.</span>_queue
+            <span class="apidocSignatureSpan">(fn)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.multilevel.client.prototype._stream">
+            function <span class="apidocSignatureSpan">multilevel.client.prototype.</span>_stream
+            <span class="apidocSignatureSpan">(db, k, name, type)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.multilevel.client.prototype.addEventListener">
+            function <span class="apidocSignatureSpan">multilevel.client.prototype.</span>addEventListener
+            <span class="apidocSignatureSpan">(ev, fn)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.multilevel.client.prototype.auth">
+            function <span class="apidocSignatureSpan">multilevel.client.prototype.</span>auth
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.multilevel.client.prototype.close">
+            function <span class="apidocSignatureSpan">multilevel.client.prototype.</span>close
+            <span class="apidocSignatureSpan">(cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.multilevel.client.prototype.createRpcStream">
+            function <span class="apidocSignatureSpan">multilevel.client.prototype.</span>createRpcStream
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.multilevel.client.prototype.deauth">
+            function <span class="apidocSignatureSpan">multilevel.client.prototype.</span>deauth
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.multilevel.client.prototype.destroy">
+            function <span class="apidocSignatureSpan">multilevel.client.prototype.</span>destroy
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.multilevel.client.prototype.on">
+            function <span class="apidocSignatureSpan">multilevel.client.prototype.</span>on
+            <span class="apidocSignatureSpan">(ev, fn)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.multilevel.client.prototype.pipe">
+            function <span class="apidocSignatureSpan">multilevel.client.prototype.</span>pipe
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.multilevel.client.prototype.prefix">
+            function <span class="apidocSignatureSpan">multilevel.client.prototype.</span>prefix
+            <span class="apidocSignatureSpan">(key)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.multilevel.client.prototype.sublevel">
+            function <span class="apidocSignatureSpan">multilevel.client.prototype.</span>sublevel
+            <span class="apidocSignatureSpan">(name)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.multilevel.msgpack">module multilevel.msgpack</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.multilevel.msgpack.client">
+            function <span class="apidocSignatureSpan">multilevel.msgpack.</span>client
+            <span class="apidocSignatureSpan">(m)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.multilevel.msgpack.server">
+            function <span class="apidocSignatureSpan">multilevel.msgpack.</span>server
+            <span class="apidocSignatureSpan">(db, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.multilevel.msgpack.writeManifest">
+            function <span class="apidocSignatureSpan">multilevel.msgpack.</span>writeManifest
+            <span class="apidocSignatureSpan">(db, path)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.multilevel" id="apidoc.module.multilevel">module multilevel</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.multilevel.client" id="apidoc.element.multilevel.client">
+        function <span class="apidocSignatureSpan">multilevel.</span>client
+        <span class="apidocSignatureSpan">(m)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Db(m) {
+  if (!(this instanceof Db)) return new Db(m);
+  if (!m) m = manifest({ methods: {} });
+  Emitter.call(this);
+
+  this.isClient = true;
+  this._isOpen = false;
+  this.methods = m.methods;
+
+  this.mdm = null;
+  this.client = null;
+  var self = this;
+
+  this._buildAll(m, this, [], null);
+  this.on('pipe', deprecated);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+And connect to it from the client:
+
+```js
+var multilevel = require('multilevel');
+var net = require('net');
+
+var db = multilevel.<span class="apidocCodeKeywordSpan">client</span>();
+var con = net.connect(3000);
+con.pipe(db.createRpcStream()).pipe(con);
+
+// asynchronous methods
+db.get('foo', function () { /* */ });
+
+// streams
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.multilevel.server" id="apidoc.element.multilevel.server">
+        function <span class="apidocSignatureSpan">multilevel.</span>server
+        <span class="apidocSignatureSpan">(db, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">server = function (db, opts) {
+  if (typeof db == 'string') throw new Error('database instance required');
+
+  if('function' === typeof db.sublevel) {
+    if(!(db.version &gt;= '6'))
+      throw new Error('expected a level-sublevel@6 or greater')
+  }
+
+  var mdm = MuxDemux({ error: true });
+
+  opts = opts || {};
+
+  var deauth = opts.deauth || function () {};
+  var auth = opts.auth || function () {
+    var cb = [].pop.call(arguments);
+    cb(null, true);
+  };
+  var access = opts.access || function () { return true };
+
+  var server = rpc(null, { raw: true, flattenError: flatten });
+  var handlers = {};
+
+  (function buildAll (db, path) {
+    var m = manifest(db);
+    for (var k in m.methods) (function (k) {
+      var name = path.concat(k).join('!');
+      var method = m.methods[k];
+
+      if (method.type == 'async') {
+        server.createLocalCall(name, function (args, cb) {
+          access(server.sessionData, db, k, args);
+          args.push(cb);
+          db[k].apply(db, args);
+        });
+      } else if (method.type == 'sync') {
+        server.createLocalCall(name, function (args, cb) {
+          access(server.sessionData, db, k, args);
+          var r;
+          try { r = db[k].apply(db, args) }
+          catch (err) { return cb(err) }
+          cb(null, r);
+        });
+      } else if (method.type == 'object') {
+        db[k].methods = method.methods;
+        buildAll(db[k], path.concat('.' + k));
+      } else {
+        handlers[name] = function (args) {
+          access(server.sessionData, db, k, args);
+          return db[k].apply(db, args);
+        };
+      }
+    })(k);
+
+    for(var name in db.sublevels) {
+      buildAll(db.sublevels[name], path.concat(name));
+    }
+  })(db, []);
+
+  server.createLocalCall('auth', function (args, cb) {
+    auth.apply(null, args.concat(function authCb (err, data) {
+      if (err) return cb(err);
+      server.sessionData = data;
+      cb(null, data);
+    }));
+  });
+
+  server.createLocalCall('deauth', function (args, cb) {
+    server.sessionData = null;
+    if (opts.deauth) opts.deauth.apply(null, args);
+    else cb();
+  });
+
+  mdm.on('connection', function (con) {
+    con.on('error', function () {});
+
+    if (con.meta == 'rpc') return con.pipe(server).pipe(con);
+
+    try {
+      var stream = handlers[con.meta[0]](con.meta.slice(1));
+      // prevent iterators from staying open when connection fails
+      con.once('error', function () {
+        var method = stream[stream.readable ? 'destroy' : 'end']
+        if(method) method.call(stream)
+      });
+      if (stream.readable) stream.pipe(con);
+      if (stream.writable) con.pipe(stream);
+      stream.on('error', function (err) {
+        con.error(flatten(err));
+      });
+    } catch (err) {
+      con.error(flatten(err));
+    }
+  });
+
+  return mdm;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var multilevel = require('multilevel');
+var net = require('net');
+var level = require('level');
+
+var db = level('/my/db');
+
+net.createServer(function (con) {
+  con.pipe(multilevel.<span class="apidocCodeKeywordSpan">server</span>(db)).pipe(con);
+}).listen(3000);
+```
+
+And connect to it from the client:
+
+```js
+var multilevel = require('multilevel');
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.multilevel.writeManifest" id="apidoc.element.multilevel.writeManifest">
+        function <span class="apidocSignatureSpan">multilevel.</span>writeManifest
+        <span class="apidocSignatureSpan">(db, path)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function writeManifest(db, path) {
+  var manifest = createManifest(db);
+  fs.writeFileSync(path, JSON.stringify(manifest, null, 2));
+  return manifest;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+db.methods = db.methods || {};
+db.methods['foo'] = { type: 'async' };
+db.foo = function (cb) {
+  cb(null, 'bar');
+};
+
+// now write the manifest to a file
+multilevel.<span class="apidocCodeKeywordSpan">writeManifest</span>(db, __dirname + '/manifest.json');
+
+// then expose `db` via shoe or any other streaming transport.
+var shoe = require('shoe');
+var sock = shoe(function (stream) {
+  stream.pipe(multilevel.server(db)).pipe(stream);
+});
+sock.install(http.createServer(/* ... */), '/websocket');
+...</pre></li>
+    </ul>
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.multilevel.client" id="apidoc.module.multilevel.client">module multilevel.client</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.multilevel.client.client" id="apidoc.element.multilevel.client.client">
+        function <span class="apidocSignatureSpan">multilevel.</span>client
+        <span class="apidocSignatureSpan">(m)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Db(m) {
+  if (!(this instanceof Db)) return new Db(m);
+  if (!m) m = manifest({ methods: {} });
+  Emitter.call(this);
+
+  this.isClient = true;
+  this._isOpen = false;
+  this.methods = m.methods;
+
+  this.mdm = null;
+  this.client = null;
+  var self = this;
+
+  this._buildAll(m, this, [], null);
+  this.on('pipe', deprecated);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+And connect to it from the client:
+
+```js
+var multilevel = require('multilevel');
+var net = require('net');
+
+var db = multilevel.<span class="apidocCodeKeywordSpan">client</span>();
+var con = net.connect(3000);
+con.pipe(db.createRpcStream()).pipe(con);
+
+// asynchronous methods
+db.get('foo', function () { /* */ });
+
+// streams
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.multilevel.client.super_" id="apidoc.element.multilevel.client.super_">
+        function <span class="apidocSignatureSpan">multilevel.client.</span>super_
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function EventEmitter() {
+  EventEmitter.init.call(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.multilevel.client.prototype" id="apidoc.module.multilevel.client.prototype">module multilevel.client.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.multilevel.client.prototype._asyncSync" id="apidoc.element.multilevel.client.prototype._asyncSync">
+        function <span class="apidocSignatureSpan">multilevel.client.prototype.</span>_asyncSync
+        <span class="apidocSignatureSpan">(db, k, name)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_asyncSync = function (db, k, name) {
+  var self = this;
+
+  db[k] = function () {
+    var args = [].slice.call(arguments);
+    var cb = typeof args[args.length - 1] == 'function'
+      ? args.pop()
+      : null;
+
+    if (/is(Open|Closed)/.test(k) &amp;&amp; !cb) {
+      if (k == 'isOpen') return self._isOpen;
+      else return !self._isOpen;
+    }
+
+    if (!cb) cb = function (err) {
+      if (err) db.emit('error', err)
+    };
+
+    self._queue(function () {
+      self.client.rpc(name, args, cb);
+    });
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.multilevel.client.prototype._buildAll" id="apidoc.element.multilevel.client.prototype._buildAll">
+        function <span class="apidocSignatureSpan">multilevel.client.prototype.</span>_buildAll
+        <span class="apidocSignatureSpan">(_db, db, path, parent)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_buildAll = function (_db, db, path, parent) {
+  var self = this;
+  var m = manifest(_db);
+
+  for (var k in m.methods) {
+    var method = m.methods[k];
+    var type = method.type;
+    var name = path.concat(k).join('!');
+
+    if (type == 'error') throw new Error(method.message || 'not supported');
+
+    if (/async|sync/.test(type)) {
+      self._asyncSync(db, k, name);
+    } else if (/readable|writable|duplex/.test(type)) {
+      self._stream(db, k, name, type);
+    } else if (type == 'object') {
+      db[k] = new Emitter;
+      self._buildAll(method, db[k], path.concat('.' + k));
+    }
+  }
+
+  db._prefix = path;
+  db._parent = parent;
+
+  for (var name in _db.sublevels) {
+    var sublevel = _db.sublevels[name];
+    db.sublevels = db.sublevels || {};
+    db.sublevels[name] = new Db(sublevel);
+    self._buildAll(sublevel, db.sublevels[name], path.concat(name), db);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.multilevel.client.prototype._queue" id="apidoc.element.multilevel.client.prototype._queue">
+        function <span class="apidocSignatureSpan">multilevel.client.prototype.</span>_queue
+        <span class="apidocSignatureSpan">(fn)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_queue = function (fn) {
+  if (this._isOpen) fn();
+  else this.once('open', fn);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.multilevel.client.prototype._stream" id="apidoc.element.multilevel.client.prototype._stream">
+        function <span class="apidocSignatureSpan">multilevel.client.prototype.</span>_stream
+        <span class="apidocSignatureSpan">(db, k, name, type)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_stream = function (db, k, name, type) {
+  var self = this;
+
+  db[k] = function () {
+    var args = [].slice.call(arguments);
+    args.unshift(name);
+
+    var tmp = tmpStream();
+
+    self._queue(function () {
+      var mdm = self.mdm;
+      var ts = (
+          type === 'readable'
+        ? mdm.createReadStream(args)
+        : type == 'writable'
+        ? mdm.createWriteStream(args)
+        : type == 'duplex'
+        ? mdm.createStream(args)
+        : (function () { throw new Error('not supported') })()
+      );
+      ts.autoDestroy = false;
+      tmp.replace(ts);
+    });
+
+    return tmp;
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.multilevel.client.prototype.addEventListener" id="apidoc.element.multilevel.client.prototype.addEventListener">
+        function <span class="apidocSignatureSpan">multilevel.client.prototype.</span>addEventListener
+        <span class="apidocSignatureSpan">(ev, fn)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">addEventListener = function (ev, fn){
+  if (allowed.indexOf(ev) == -1) throw new Error('not supported');
+  return on.call(this, ev, fn);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.multilevel.client.prototype.auth" id="apidoc.element.multilevel.client.prototype.auth">
+        function <span class="apidocSignatureSpan">multilevel.client.prototype.</span>auth
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">auth = function () {
+  var args = [].slice.call(arguments);
+  var cb = typeof args[args.length - 1] == 'function'
+    ? args.pop()
+    : function () {};
+  this.client.rpc('auth', args, cb);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var multilevel = require('multilevel');
+var shoe = require('shoe');
+
+var stream = shoe();
+var db = multilevel.client();
+stream.pipe(db.createRpcStream()).pipe(stream);
+
+db.<span class="apidocCodeKeywordSpan">auth</span>({ name: 'root', pass: 'toor' }, function (err, data) {
+  if (err) throw err
+  //later, they can sign out, too.
+
+  db.deauth(function (err) {
+    //signed out!
+  });
+});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.multilevel.client.prototype.close" id="apidoc.element.multilevel.client.prototype.close">
+        function <span class="apidocSignatureSpan">multilevel.client.prototype.</span>close
+        <span class="apidocSignatureSpan">(cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">close = function (cb) {
+  this._isOpen = false;
+  if (this.mdm) this.mdm.end();
+  if (cb) process.nextTick(cb);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.multilevel.client.prototype.createRpcStream" id="apidoc.element.multilevel.client.prototype.createRpcStream">
+        function <span class="apidocSignatureSpan">multilevel.client.prototype.</span>createRpcStream
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">createRpcStream = function () {
+  var self = this;
+  self._isOpen = true;
+
+  var mdm = self.mdm = MuxDemux({ error: true });
+  mdm.on('end', function () {
+    self._isOpen = false;
+    self.emit('close');
+  });
+
+  var client = self.client = rpc(null, { raw: true });
+  var rpcStream = mdm.createStream('rpc');
+  rpcStream.on('error', function () {});
+  client.pipe(rpcStream).pipe(client);
+
+  setTimeout(function () {
+    self.emit('open');
+  });
+
+  return mdm;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+```js
+var multilevel = require('multilevel');
+var net = require('net');
+
+var db = multilevel.client();
+var con = net.connect(3000);
+con.pipe(db.<span class="apidocCodeKeywordSpan">createRpcStream</span>()).pipe(con);
+
+// asynchronous methods
+db.get('foo', function () { /* */ });
+
+// streams
+db.createReadStream().on('data', function () { /* */ });
+```
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.multilevel.client.prototype.deauth" id="apidoc.element.multilevel.client.prototype.deauth">
+        function <span class="apidocSignatureSpan">multilevel.client.prototype.</span>deauth
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">deauth = function () {
+  var args = [].slice.call(arguments);
+  var cb = typeof args[args.length - 1] == 'function'
+    ? args.pop()
+    : function () {};
+  this.client.rpc('deauth', args, cb);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var db = multilevel.client();
+stream.pipe(db.createRpcStream()).pipe(stream);
+
+db.auth({ name: 'root', pass: 'toor' }, function (err, data) {
+  if (err) throw err
+  //later, they can sign out, too.
+
+  db.<span class="apidocCodeKeywordSpan">deauth</span>(function (err) {
+    //signed out!
+  });
+});
+```
+
+## API
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.multilevel.client.prototype.destroy" id="apidoc.element.multilevel.client.prototype.destroy">
+        function <span class="apidocSignatureSpan">multilevel.client.prototype.</span>destroy
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">destroy = function () {
+  if (this.mdm) this.mdm.close();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var stream = db.createRpcStream()
+var con = net.connect(port)
+stream.pipe(con).pipe(stream)
+
+var start = Date.now()
+write(db, num, function (err, results) {
+  console.log(Date.now() - start)
+  con.<span class="apidocCodeKeywordSpan">destroy</span>();
+  process.exit(0);
+})
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.multilevel.client.prototype.on" id="apidoc.element.multilevel.client.prototype.on">
+        function <span class="apidocSignatureSpan">multilevel.client.prototype.</span>on
+        <span class="apidocSignatureSpan">(ev, fn)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">on = function (ev, fn){
+  if (allowed.indexOf(ev) == -1) throw new Error('not supported');
+  return on.call(this, ev, fn);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var con = net.connect(3000);
+con.pipe(db.createRpcStream()).pipe(con);
+
+// asynchronous methods
+db.get('foo', function () { /* */ });
+
+// streams
+db.createReadStream().<span class="apidocCodeKeywordSpan">on</span>('data', function () { /* */ });
+```
+
+## Compatibility and binary data
+
+multilevel works in the browser too - via
+[browserify](https://github.com/substack/node-browserify) - and has full
+support for binary data. For getting a connection between browser and server I
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.multilevel.client.prototype.pipe" id="apidoc.element.multilevel.client.prototype.pipe">
+        function <span class="apidocSignatureSpan">multilevel.client.prototype.</span>pipe
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function deprecated() {
+  throw new Error(
+    'The API changed. Use db.createRpcStream().'
+  );
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var multilevel = require('multilevel');
+var net = require('net');
+var level = require('level');
+
+var db = level('/my/db');
+
+net.createServer(function (con) {
+  con.<span class="apidocCodeKeywordSpan">pipe</span>(multilevel.server(db)).pipe(con);
+}).listen(3000);
+```
+
+And connect to it from the client:
+
+```js
+var multilevel = require('multilevel');
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.multilevel.client.prototype.prefix" id="apidoc.element.multilevel.client.prototype.prefix">
+        function <span class="apidocSignatureSpan">multilevel.client.prototype.</span>prefix
+        <span class="apidocSignatureSpan">(key)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">prefix = function (key) {
+  return this._prefix.slice()
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.multilevel.client.prototype.sublevel" id="apidoc.element.multilevel.client.prototype.sublevel">
+        function <span class="apidocSignatureSpan">multilevel.client.prototype.</span>sublevel
+        <span class="apidocSignatureSpan">(name)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">sublevel = function (name) {
+  if (!this.sublevels || !this.sublevels[name]) {
+    throw new Error('client cannot create new sublevels');
+  }
+  return this.sublevels[name];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.multilevel.msgpack" id="apidoc.module.multilevel.msgpack">module multilevel.msgpack</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.multilevel.msgpack.client" id="apidoc.element.multilevel.msgpack.client">
+        function <span class="apidocSignatureSpan">multilevel.msgpack.</span>client
+        <span class="apidocSignatureSpan">(m)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Db(m) {
+  if (!(this instanceof Db)) return new Db(m);
+  if (!m) m = manifest({ methods: {} });
+  Emitter.call(this);
+
+  this.isClient = true;
+  this._isOpen = false;
+  this.methods = m.methods;
+
+  this.mdm = null;
+  this.client = null;
+  var self = this;
+
+  this._buildAll(m, this, [], null);
+  this.on('pipe', deprecated);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+And connect to it from the client:
+
+```js
+var multilevel = require('multilevel');
+var net = require('net');
+
+var db = multilevel.<span class="apidocCodeKeywordSpan">client</span>();
+var con = net.connect(3000);
+con.pipe(db.createRpcStream()).pipe(con);
+
+// asynchronous methods
+db.get('foo', function () { /* */ });
+
+// streams
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.multilevel.msgpack.server" id="apidoc.element.multilevel.msgpack.server">
+        function <span class="apidocSignatureSpan">multilevel.msgpack.</span>server
+        <span class="apidocSignatureSpan">(db, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">server = function (db, opts) {
+  if (typeof db == 'string') throw new Error('database instance required');
+
+  if('function' === typeof db.sublevel) {
+    if(!(db.version &gt;= '6'))
+      throw new Error('expected a level-sublevel@6 or greater')
+  }
+
+  var mdm = MuxDemux({ error: true });
+
+  opts = opts || {};
+
+  var deauth = opts.deauth || function () {};
+  var auth = opts.auth || function () {
+    var cb = [].pop.call(arguments);
+    cb(null, true);
+  };
+  var access = opts.access || function () { return true };
+
+  var server = rpc(null, { raw: true, flattenError: flatten });
+  var handlers = {};
+
+  (function buildAll (db, path) {
+    var m = manifest(db);
+    for (var k in m.methods) (function (k) {
+      var name = path.concat(k).join('!');
+      var method = m.methods[k];
+
+      if (method.type == 'async') {
+        server.createLocalCall(name, function (args, cb) {
+          access(server.sessionData, db, k, args);
+          args.push(cb);
+          db[k].apply(db, args);
+        });
+      } else if (method.type == 'sync') {
+        server.createLocalCall(name, function (args, cb) {
+          access(server.sessionData, db, k, args);
+          var r;
+          try { r = db[k].apply(db, args) }
+          catch (err) { return cb(err) }
+          cb(null, r);
+        });
+      } else if (method.type == 'object') {
+        db[k].methods = method.methods;
+        buildAll(db[k], path.concat('.' + k));
+      } else {
+        handlers[name] = function (args) {
+          access(server.sessionData, db, k, args);
+          return db[k].apply(db, args);
+        };
+      }
+    })(k);
+
+    for(var name in db.sublevels) {
+      buildAll(db.sublevels[name], path.concat(name));
+    }
+  })(db, []);
+
+  server.createLocalCall('auth', function (args, cb) {
+    auth.apply(null, args.concat(function authCb (err, data) {
+      if (err) return cb(err);
+      server.sessionData = data;
+      cb(null, data);
+    }));
+  });
+
+  server.createLocalCall('deauth', function (args, cb) {
+    server.sessionData = null;
+    if (opts.deauth) opts.deauth.apply(null, args);
+    else cb();
+  });
+
+  mdm.on('connection', function (con) {
+    con.on('error', function () {});
+
+    if (con.meta == 'rpc') return con.pipe(server).pipe(con);
+
+    try {
+      var stream = handlers[con.meta[0]](con.meta.slice(1));
+      // prevent iterators from staying open when connection fails
+      con.once('error', function () {
+        var method = stream[stream.readable ? 'destroy' : 'end']
+        if(method) method.call(stream)
+      });
+      if (stream.readable) stream.pipe(con);
+      if (stream.writable) con.pipe(stream);
+      stream.on('error', function (err) {
+        con.error(flatten(err));
+      });
+    } catch (err) {
+      con.error(flatten(err));
+    }
+  });
+
+  return mdm;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var multilevel = require('multilevel');
+var net = require('net');
+var level = require('level');
+
+var db = level('/my/db');
+
+net.createServer(function (con) {
+  con.pipe(multilevel.<span class="apidocCodeKeywordSpan">server</span>(db)).pipe(con);
+}).listen(3000);
+```
+
+And connect to it from the client:
+
+```js
+var multilevel = require('multilevel');
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.multilevel.msgpack.writeManifest" id="apidoc.element.multilevel.msgpack.writeManifest">
+        function <span class="apidocSignatureSpan">multilevel.msgpack.</span>writeManifest
+        <span class="apidocSignatureSpan">(db, path)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function writeManifest(db, path) {
+  var manifest = createManifest(db);
+  fs.writeFileSync(path, JSON.stringify(manifest, null, 2));
+  return manifest;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+db.methods = db.methods || {};
+db.methods['foo'] = { type: 'async' };
+db.foo = function (cb) {
+  cb(null, 'bar');
+};
+
+// now write the manifest to a file
+multilevel.<span class="apidocCodeKeywordSpan">writeManifest</span>(db, __dirname + '/manifest.json');
+
+// then expose `db` via shoe or any other streaming transport.
+var shoe = require('shoe');
+var sock = shoe(function (stream) {
+  stream.pipe(multilevel.server(db)).pipe(stream);
+});
+sock.install(http.createServer(/* ... */), '/websocket');
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
+</body></html>
